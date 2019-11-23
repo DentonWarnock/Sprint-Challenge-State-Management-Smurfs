@@ -31,14 +31,14 @@ export const SMURF_ADD_SUCCESS = "KANYE_ADD_SUCCESS";
 export const SMURF_ADD_FAILURE = "KANYE_ADD_FAILURE"; 
 
 export const addNewSmurf = value => dispatch => {
-    console.log("actions, addNewSmuf, dispatch : ")
+    console.log("actions, addNewSmuf, dispatch : ", dispatch)
     dispatch({ type: SMURF_ADD_START});
         axios
             .post("http://localhost:3333/smurfs", {
                 name: value.name,
                 age: value.age,
                 height: value.height,
-                // id: Date.now()
+                id: Date.now()
             })
             .then(res => {
                 console.log("Actions, POST RES: ", res.data);
@@ -53,3 +53,21 @@ export const addNewSmurf = value => dispatch => {
                 })
             })
     }
+
+// export const SMURF_REMOVE_START = "KANYE_REMOVE_START"; 
+// export const SMURF_REMOVE_SUCCESS = "KANYE_REMOVE_SUCCESS"; 
+// export const SMURF_REMOVE_FAILURE = "KANYE_REMOVE_FAILURE"; 
+
+// export const removeSmurf = id => dispatch => {
+//     dispatch({ type: SMURF_REMOVE_START});
+//         axios   
+//             .delete(`http://localhost:3333/smurfs/${id}`)
+//             .then(res => {
+//                 console.log("actions, REMOVE RES :", res);
+//                 dispatch({ type: SMURF_REMOVE_SUCCESS, payload: res.data })
+//             })
+//             .catch(err => {
+//                 console.log("actions, REMOVE ERR :", err);
+//                 dispatch({ type: SMURF_REMOVE_FAILURE, payload: err})
+//             })
+// }

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from "react-redux";
-import { getSmurfs } from '../actions';
+import { getSmurfs} from '../actions';
 
 const SmurfList = props => {
     console.log("SmurfList.js, props: ", props);
@@ -11,16 +11,20 @@ const SmurfList = props => {
     return (
         <>
         <div className="container">
-            {/* {props.error && <div>{props.error}</div>} */}
+            {/* {props.error && <div>{props.error}</div>}
 
-            {/* {props.isLoading ? 
+            {props.isLoading ? 
                 <div className="loading">loading data...</div> 
                 : */}
                 {props.smurfs.length ? (
                     <div className="list">
-                         {props.smurfs.map(smurf => {
-                          return <div className="list-item" key={smurf.id}>{smurf.name} - {smurf.age} - {smurf.height}</div>
-                    })}
+                         {props.smurfs.map(smurf => (
+                            <div className="list-item" key={smurf.id}>
+                                {smurf.name} - {smurf.age} year old - {smurf.height}cm tall
+                                {/* <button onClick={props.removeSmurf(smurf.id)}>X</button> */}
+                            </div>
+                            ))
+                        }
                     </div>
                 )  
                 :
