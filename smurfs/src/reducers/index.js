@@ -18,9 +18,27 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 isLoading: false,
-                smurfs: action.payload
+                smurfs: action.payload,
             }
         case SMURF_LOAD_FAILURE:
+            return {
+                ...state,
+                isLoading: false,
+                error: action.payload
+            }
+        case SMURF_ADD_START: 
+            return {
+                ...state,
+                isLoading: true,
+            }
+        case SMURF_ADD_SUCCESS:
+            return {
+                ...state,
+                isLoading: false,
+                smurfs: action.payload,
+                error: ''
+            }
+        case SMURF_ADD_FAILURE: 
             return {
                 ...state,
                 isLoading: false,

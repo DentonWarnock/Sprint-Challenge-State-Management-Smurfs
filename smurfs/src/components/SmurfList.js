@@ -10,22 +10,32 @@ const SmurfList = props => {
 
     return (
         <>
-            {props.smurfs.length ? (
-                <div className="smurf-list">
-                {props.smurfs.map(smurf => {
-                return <div key={smurf.id}>{smurf.name} - {smurf.age} - {smurf.height}</div>
-            })}
-            </div>
-            ) :
-            <p>We need to add some more Smurfs!</p>
-        }            
+        <div className="container">
+            {/* {props.error && <div>{props.error}</div>} */}
+
+            {/* {props.isLoading ? 
+                <div className="loading">loading data...</div> 
+                : */}
+                {props.smurfs.length ? (
+                    <div className="list">
+                         {props.smurfs.map(smurf => {
+                          return <div className="list-item" key={smurf.id}>{smurf.name} - {smurf.age} - {smurf.height}</div>
+                    })}
+                    </div>
+                )  
+                :
+                <p>We need to add some more Smurfs!</p>
+            }            
+        </div>
         </>
     )
 }
 
 const mapStateToProps = state => {
     return {
-        smurfs: state.smurfs
+        isLoading: state.isLoading,
+        smurfs: state.smurfs,
+        error: state.error
     }    
 }
 

@@ -9,6 +9,13 @@ input {
   margin: 1rem auto;
 }
 
-.smurf-list {
+.list {
   margin: 1rem;
+  
 }
+
+.list-item {
+  margin: 1rem;
+  
+}
+
