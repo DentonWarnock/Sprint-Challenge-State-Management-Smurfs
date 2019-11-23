@@ -3,3 +3,12 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+input {
+  display: block;
+  margin: 1rem auto;
+}
+
+.smurf-list {
+  margin: 1rem;
+}

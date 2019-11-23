@@ -1,4 +1,5 @@
 import { SMURF_LOAD_START, SMURF_LOAD_FAILURE, SMURF_LOAD_SUCCESS } from '../actions';
+import { SMURF_ADD_START, SMURF_ADD_FAILURE, SMURF_ADD_SUCCESS } from '../actions';
 
 const initialState = {
     isLoading: false,
